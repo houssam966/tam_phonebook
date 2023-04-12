@@ -1,0 +1,12 @@
+{% block content %}
+  <h1>Contact Details</h1>
+  <h2>{{ contact.name }}</h2>
+  <ul>
+    {% for phone_number in contact.phone_numbers.all %}
+      <li>{{ phone_number.number }}</li>
+    {% empty %}
+      <li>No phone numbers found.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'phonebook:list_contacts' %}">Back to Contact List</a>
+{% endblock %}

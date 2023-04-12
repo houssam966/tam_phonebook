@@ -1,0 +1,9 @@
+{% block content %}
+  <h1>Add Contact</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label> Add a line break between each phone number</label>
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

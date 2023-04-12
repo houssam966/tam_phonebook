@@ -1,0 +1,12 @@
+{% block content %}
+<h1>Contact List</h1>
+<ul>
+  {% for contact in contacts %}
+  <li><a href="{% url 'phonebook:contact_details' contact.id %}">{{ contact.name }}</a></li>
+  {% empty %}
+  <li>No contacts found.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'phonebook:add_contact' %}">Add Contact</a>
+
+{% endblock %}
